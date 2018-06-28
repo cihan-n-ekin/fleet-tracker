@@ -6,5 +6,21 @@ html
     script(src="http://www.locationbox.com.tr/locationbox/services?Key=#{key}&Cmd=API&Typ=JS")
     script(src="/javascripts/app.js")
   body
-    // html'de kullanıdığın her şeyi burda da kullanabilirsin
-    // ancak python stili whitespaceli notation var
+    .sidenav
+      a(href="")
+        img(src="")
+      a(href="")
+      a(href="")
+    .main#main
+      .header#header
+        span(onclick="openNav()")
+          .bar1
+          .bar2
+          .bar3
+        .logo
+          a(href="index.jade")
+            // Will find a logo
+            img(src="/images/logo.png")
+        .searchbar
+      .container#container
+        .map#map
