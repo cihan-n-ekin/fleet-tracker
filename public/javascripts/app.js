@@ -1,4 +1,5 @@
 
+
 function nav(x){
     if (document.getElementById("sidenav").style.width == "250px"){
         closeNav(x)
