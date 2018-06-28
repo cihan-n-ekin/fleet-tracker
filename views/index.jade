@@ -6,20 +6,23 @@ html
     script(src="http://www.locationbox.com.tr/locationbox/services?Key=#{key}&Cmd=API&Typ=JS")
     script(src="/javascripts/app.js")
   body
-    .sidenav#sidenav
-      a(href="#") Map Options
-      a(href="#") New Route
-      a(href="#") Remove Route
-    .main#main
-      .header#header
-        .container(onclick="openNav(this)")
-          .bar1
-          .bar2
-          .bar3
-        .logo
-          a(href="index.jade")
-            // Will find a logo
-            img(src="/images/logo.png")
-        .searchbar
-      .container#container
-        .map#map
+    .header#header
+      ul
+        li
+          .container(onclick="nav(this)")
+            .bar1
+            .bar2
+            .bar3
+        li  
+          .logo
+            a(href="#")
+              img(src="/images/logo.png")
+        li
+          .searchbar
+  .sidenav#sidenav
+    a(href="#") Map Options
+    a(href="#") New Route
+    a(href="#") Remove Route
+  .main#main
+    .container#container
+      .map#map
