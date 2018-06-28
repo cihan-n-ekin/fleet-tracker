@@ -7,10 +7,6 @@ function nav(x){
     }
 }
 
-import { Route } from "./classes/route";
-import { Vehicle } from "./classes/vehicle";
-
-
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav(x) {
     x.classList.toggle("change");
