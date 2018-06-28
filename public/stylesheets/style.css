@@ -51,7 +51,7 @@ a {
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav button a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -124,4 +124,36 @@ li a {
 
 li a:hover {
   background-color: #333;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+button{
+  border: none;
+  background: none;
+  outline: none;
+  text-decoration: none;
+
+}
+
+
+.dropmap, .droproutes, .dropnew{
+  display: none;
+  background-color: #333;
+  padding-left: 8px;
+}
+
+
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 100%;
 }

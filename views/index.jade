@@ -19,10 +19,27 @@ html
               img(src="/images/logo.png")
         li
           .searchbar
+              input(type="text",
+                    name="search",
+                    placeholder="Search..")
+
   .sidenav#sidenav
-    a(href="#") Map Options
-    a(href="#") New Route
-    a(href="#") Remove Route
+    button(class="mapops")
+      a(href="#") Map Options
+      i(class="fa-caret-down")
+    .dropmap
+      button Show Cars
+      button Show Traffic
+      button Show Weather
+    button(class="routes")
+      a(href="#") Routes
+      i(class="fa-caret-down")
+    .droproutes
+    button(class="newroute")
+      a(href="#") New Route
+      i(class="fa-caret-down")
+    .dropnew
+
   .main#main
     .container#container
       .map#map
