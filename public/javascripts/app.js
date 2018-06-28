@@ -1,3 +1,3 @@
-function openNav(){
-
+function openNav(x){
+    x.classList.toggle("change");
 }
