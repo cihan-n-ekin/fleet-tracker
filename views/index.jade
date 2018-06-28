@@ -14,7 +14,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="http://www.locationbox.com.tr/locationbox/services?Key=#{key}&Cmd=API&Typ=JS")
     script(src="/javascripts/app.js")
-  body
+    script(src="/javascripts/map.js" type="module")
+
+  body(onload="startMap()")
     .header#header
       ul
         li
