@@ -1,12 +1,3 @@
-
-function nav(x){
-    if (document.getElementById("sidenav").style.width == "250px"){
-        closeNav(x)
-    } else {
-        openNav(x)
-    }
-}
-
 import { Route } from "./classes/route";
 import { Vehicle } from "./classes/vehicle";
 
@@ -24,3 +15,12 @@ function closeNav(x) {
     document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+
+
+function nav(x){
+    if (document.getElementById("sidenav").style.width == "250px"){
+        closeNav(x)
+    } else {
+        openNav(x)
+    }    
+}    
