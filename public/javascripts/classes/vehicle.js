@@ -31,6 +31,7 @@ export class Vehicle extends EventEmitter {
   getInfo() {
     const href = `/api/vehicles/${this.vehID}`;
     const req = new XMLHttpRequest();
+    req.open("GET", href, true);
     req.addEventListener("load", (xhr, ev) => {
       const info = JSON.parse(xhr.readText());
       this.emit("info", info, this);
