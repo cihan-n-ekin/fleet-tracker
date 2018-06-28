@@ -1,12 +1,10 @@
-import { EventEmitter } from "events";
 import { Route } from "./route.js";
 import { Gastank } from "./gastank.js";
 
-export class Vehicle extends EventEmitter {
-  constructor(id, posX, posY, {make, gaslevel, speed, routeID, routeStart, routeEnd, infoDelay}) {
-    super();
+export class Vehicle {
+  constructor(id, posX, posY, {make, gaslevel, speed, routeID, routeStart, routeEnd, infoDelay, gasMax}) {
     this.vehID = id;
-    if(gaslevel) this.gas = new Gastank(gaslevel);
+    if(gaslevel) this.gas = new Gastank(gaslevel, {max: gasMax});
     this.gps = {
      
       pos: {
@@ -16,7 +14,7 @@ export class Vehicle extends EventEmitter {
      
       v: speed,
     
-      route: route ? new Route(route) : (routeStart && routeEnd ? (function (rs, re) {
+      route: routeID ? new Route(routeID) : (routeStart && routeEnd ? (function (rs, re) {
         const r = new Route();
         r.start = rs;
         r.end = re;
@@ -25,17 +23,18 @@ export class Vehicle extends EventEmitter {
 
     this.infoInterval = setInterval(this.getInfo, infoDelay ? infoDelay : 200);
 
-    this.gas.on("low", () => this.emit("low", this.gas))
+    this.gas.onlow = () => this.onlow(this.gas)
   }
 
   getInfo() {
     const href = `/api/vehicles/${this.vehID}`;
     const req = new XMLHttpRequest();
     req.open("GET", href, true);
-    req.addEventListener("load", (xhr, ev) => {
-      const info = JSON.parse(xhr.readText());
-      this.emit("info", info, this);
-      this.updateInfo(
+    const game = this;
+    req.addEventListener("load", function() {
+      const info = JSON.parse(this.responseText);
+      game.emit("info", info, game);
+      game.updateInfo(
         info.posX,
         info.posY,
         info

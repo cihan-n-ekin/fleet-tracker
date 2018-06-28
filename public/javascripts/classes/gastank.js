@@ -1,6 +1,4 @@
-import { EventEmitter } from 'events';
-
-export class Gastank extends EventEmitter {
+export class Gastank {
   constructor(level, {max, critical}) {
     
     if(!level) throw new TypeError("level needs to be a float between 0 and 1");
@@ -11,7 +9,7 @@ export class Gastank extends EventEmitter {
     this.amount = critical ? critical : 0.2;
 
     this.gasCheck = setInterval(() => {
-      if (this.level < this.critical) this.emit("low", this, this.level)
+      if (this.level < this.critical) try {this.onlow(this.level)} catch (e) {}
     }, 2000)
   }
 
