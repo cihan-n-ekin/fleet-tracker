@@ -3,9 +3,6 @@ const startMap = function startMap() {
 
 	window.map.vehicles = new Map();
 	window.map.routes = new Map();
-
-
-
 };
 
 const getVehicles = function() {
@@ -14,3 +11,5 @@ const getVehicles = function() {
 		req.open("GET");
 	});
 }
+
+document.getElementsByTagName("body")[0].addEventListener("load", startMap);
