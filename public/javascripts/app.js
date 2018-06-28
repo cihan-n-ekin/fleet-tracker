@@ -21,3 +21,19 @@ function closeNav(x) {
     document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+
+//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropmapops = document.getElementsByClassName("mapops");
+var i;
+
+for (i = 0; i < dropmapops.length; i++) {
+    dropmapops[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = document.getElementsByClassName("dropmap");
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}

@@ -139,6 +139,12 @@ button{
 
 }
 
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
 
 .dropmap, .droproutes, .dropnew{
   display: none;
@@ -170,5 +176,5 @@ input[type=text]:focus {
 }
 
  #searchli, .searchbar {
-   width: 200%
+   width: 80%
  }
