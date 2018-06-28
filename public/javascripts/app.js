@@ -1,6 +1,12 @@
-import { Route } from "./classes/route";
-import { Vehicle } from "./classes/vehicle";
 
+
+function nav(x){
+    if (document.getElementById("sidenav").style.width == "250px"){
+        closeNav(x)
+    } else {
+        openNav(x)
+    }
+}
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav(x) {
@@ -15,12 +21,3 @@ function closeNav(x) {
     document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
-
-
-function nav(x){
-    if (document.getElementById("sidenav").style.width == "250px"){
-        closeNav(x)
-    } else {
-        openNav(x)
-    }    
-}    
