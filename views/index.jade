@@ -6,11 +6,10 @@ html
     script(src="http://www.locationbox.com.tr/locationbox/services?Key=#{key}&Cmd=API&Typ=JS")
     script(src="/javascripts/app.js")
   body
-    .sidenav
-      a(href="")
-        img(src="")
-      a(href="")
-      a(href="")
+    .sidenav#sidenav
+      a(href="#") Map Options
+      a(href="#") New Route
+      a(href="#") Remove Route
     .main#main
       .header#header
         .container(onclick="openNav(this)")
