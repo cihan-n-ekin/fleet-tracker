@@ -1,5 +1,6 @@
 body {
-  padding: 50px;
+  padding: 0px;
+  margin: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -10,13 +11,15 @@ a {
 .container {
   display: inline-block;
   cursor: pointer;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 /* Menu bar animation*/
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #333;
+  background-color:white;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -76,7 +79,7 @@ a {
   width: 100%;
   height: 100%;
   transition: margin-left .5s;
-  padding: 20px;
+  padding: 0px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -86,9 +89,9 @@ a {
 }
 
 .header {
-  background-color: white;
+  background-color: #111;
   height: 10%;
   width: 100%;
   margin: 0;
-  padding: 0;ß
+  padding: 0;
 }
