@@ -68,5 +68,9 @@
     "worker"        : false,
     "wsh"           : false,
     "yui"           : false,
-    "globals"       : {}
+    "globals"       : {
+        "IAnalysis": true,
+        "ILayer": true,
+        "IMapper": true
+    }
 }
