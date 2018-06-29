@@ -1,3 +1,10 @@
 import { MapContainer } from "./classes/map.js"
 
 const map = new MapContainer();
+const vehiclesReq = new XMLHttpRequest();
+vehiclesReq.open("GET", "/api/vehicles");
+vehiclesReq.addEventListener("load", function() {
+	JSON.parse(this.responseText).forEach((vehData) => map.addVehicle(vehData))
+});
+
+const buttons = {}
