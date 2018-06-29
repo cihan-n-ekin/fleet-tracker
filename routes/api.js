@@ -49,6 +49,45 @@ router.get("/vehicles", function(req, res, next) {
 	res.send(apilol);
 });
 
+router.get("/routes/:id", function (req, res, next) {
+	console.log(req.p0arams.id);
+	const routes = [
+		{
+			id: 1,
+			starting_dest: {
+				x: 40.02156,
+				y: 29.14265,
+			},
+			final_dest: {
+				x: 37.42135,
+				y: 30.17565,
+			},
+			gas_loss: 0.5
+		}, {
+			id: 2,
+			starting_dest: {
+				x: 41.02156,
+				y: 32.14265,
+			},
+			final_dest: {
+				x: 36.42135,
+				y: 31.17565,
+			},
+			gas_loss: 0.3
+		}, {
+			id: 3,
+			starting_dest: {
+				x: 35.02156,
+				y: 35.14265,
+			},
+			final_dest: {
+				x: 37.42135,
+				y: 37.17565,
+			},
+			gas_loss: 0.7
+		}
+	]
+})
 // API endpoint to access route info
 router.get("/vehicles/:id", function (req, res, next) {
 

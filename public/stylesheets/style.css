@@ -25,7 +25,7 @@ a {
 }
 
 .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+-webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
 }
 
@@ -80,6 +80,7 @@ a {
   height: 600px;
   transition: margin-left .5s;
   padding: 0px;
+  float: right
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
