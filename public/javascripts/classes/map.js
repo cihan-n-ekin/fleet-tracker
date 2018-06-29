@@ -56,23 +56,16 @@ export class MapContainer {
   toggleWeather() {
     // do things
   }
-  
-  // BENI BURAYA IŞINLADI
-  // you need to send a request to "/api/lb?Cons=KAMYON,FERIBOT&yp=JSON&Criteria=FAST&etc"
+
   // dont forget to use encodeURIComponent()
-    
   toggleRoutes() {
-
     // bunu vehicles.forEach() yaparsan daha hızlı çalışır
-
-    // görmedim onu lol undo yapsana bi    
     for (let i = 0; i < this.vehicles.length; i++) {
       const vehicle = this.vehicles[i]; 
       console.log(vehicle);
-      const data = vehicle.route.data();
-      this.map.addRoute('route_'+ i, data.pathid, 'ROUTE_PATH', null); 
-
-      return;
+      vehicle.gps.route.data.then((data)=> {
+      this.map.addRoute(String(vehicle.gps.route.id), data.pathid, 'ROUTE_PATH', null); 
+      })
     }
   }
 }
