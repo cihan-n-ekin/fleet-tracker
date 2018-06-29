@@ -25,7 +25,7 @@ a {
 }
 
 .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+-webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
 }
 
@@ -51,17 +51,18 @@ a {
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav button {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
   transition: 0.3s;
+  border: none;
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidenav button:hover {
   color: #f1f1f1;
 }
 
@@ -80,6 +81,7 @@ a {
   height: 600px;
   transition: margin-left .5s;
   padding: 0px;
+  float: right
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
