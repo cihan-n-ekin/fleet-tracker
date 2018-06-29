@@ -19,6 +19,10 @@ export class Route {
     console.log(x ,y)
   }
 
+  get start() {
+
+  }
+
   set end({x, y}) {
     delete this.cache;
     console.log(x ,y)

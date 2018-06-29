@@ -68,8 +68,9 @@ export class MapContainer {
     // görmedim onu lol undo yapsana bi    
     for (let i = 0; i < this.vehicles.length; i++) {
       const vehicle = this.vehicles[i]; 
-      const data = vehicle.route.data;
-      map.addRoute('route_'+ i, data.pathid, 'ROUTE_PATH', null); 
+      console.log(vehicle);
+      const data = vehicle.route.data();
+      this.map.addRoute('route_'+ i, data.pathid, 'ROUTE_PATH', null); 
 
       return;
     }
