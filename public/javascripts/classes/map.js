@@ -41,8 +41,9 @@ export class MapContainer {
     for (const methodName in functions) {
       if (functions.hasOwnProperty(methodName)) {
         const buttonToBind = functions[methodName];
+        console.log(buttonToBind, this[methodName])
         try {
-          buttonToBind.onclick(this[methodName].bind(this));
+          buttonToBind.addEventListener("click", this[methodName].bind(this));
         } catch (e) {}
       }
     }

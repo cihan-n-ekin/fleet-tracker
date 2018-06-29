@@ -15,7 +15,8 @@ router.get("/vehicles", function(req, res, next) {
 			y: 39.2736,
 			opts: {
 				speed: 100,
-				gaslevel: 0.3
+				gaslevel: 0.3,
+				routeID: 1,
 			},
 			id: 1
 		}, {
@@ -23,7 +24,8 @@ router.get("/vehicles", function(req, res, next) {
 			y: 39.0928,
 			opts: {
 				speed: 100,
-				gaslevel: 0.3
+				gaslevel: 0.3,
+				routeID: 1,
 			},
 			id: 2
 		}, {
@@ -31,7 +33,8 @@ router.get("/vehicles", function(req, res, next) {
 			y: 40.82173,
 			opts: {
 				speed: 100,
-				gaslevel: 0.3
+				gaslevel: 0.3,
+				routeID: 1,
 			},
 			id: 3
 		}, {
@@ -39,7 +42,8 @@ router.get("/vehicles", function(req, res, next) {
 			y: 40.1711,
 			opts: {
 				speed: 100,
-				gaslevel: 0.3
+				gaslevel: 0.3,
+				routeID: 1,
 			},
 			id: 4
 		}
