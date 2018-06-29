@@ -23,23 +23,21 @@ export class Vehicle {
       })(routeStart, routeEnd) : undefined)
     }
 
-    this.infoInterval = setInterval(this.getInfo, infoDelay ? infoDelay : 200);
-
-    this.gas.onlow = () => this.onlow(this.gas)
+    this.infoInterval = setInterval(this.getInfo.bind(this), infoDelay ? infoDelay : 10*1000);
   }
 
   getInfo() {
     const href = `/api/vehicles/${this.id}`;
     const req = new XMLHttpRequest();
     req.open("GET", href, true);
-    const game = this;
+    const vehicle = this;
     req.addEventListener("load", function() {
       const info = JSON.parse(this.responseText);
-      game.emit("info", info, game);
-      game.updateInfo(
-        info.posX,
-        info.posY,
-        info
+      console.log(info)
+      vehicle.updateInfo(
+        info.x,
+        info.x,
+        info.opts
       );
     });
     req.addEventListener("error", (xhr, ev) => {
@@ -50,9 +48,10 @@ export class Vehicle {
   }
 
   updateInfo(posX, posY, {gaslevel, speed}) {
+    console.log(posX, posY, gaslevel, speed);
     this.gps.pos.x = posX || this.gps.pos.x;
     this.gps.pos.y = posY || this.gps.pos.y;
     this.gps.pos.speed = speed || this.gps.pos.speed;
-    this.gas.level = gaslevel;
+    this.gas ? this.gas.level = gaslevel : this.gas = new Gastank(gaslevel);
   }
 }

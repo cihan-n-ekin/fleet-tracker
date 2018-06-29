@@ -8,9 +8,6 @@ export class Gastank {
     this.amount = max ? max*level : undefined;
     this.amount = critical ? critical : 0.2;
 
-    this.gasCheck = setInterval(() => {
-      if (this.level < this.critical) try {this.onlow(this.level)} catch (e) {}
-    }, 2000)
   }
 
   set max(x) {

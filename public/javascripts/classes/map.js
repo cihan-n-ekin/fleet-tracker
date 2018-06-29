@@ -14,6 +14,7 @@ export class MapContainer {
       (function (self) { //Self-executing func which takes 'this' as self
         return function () { //Return a function in the context of 'self'
           self.updatePins(); //Thing you wanted to run as non-window 'this'
+          console.log("updated pins");
         }})(this),
       400
     );
@@ -23,19 +24,20 @@ export class MapContainer {
 
   addVehicle(data) {
 
-  const newVehicle = new Vehicle(data.id, data.pos.x, data.pos.y, data, this);
-  this.vehicles.push(
-    newVehicle 
-  );
+    const newVehicle = new Vehicle(data.id, data.x, data.y, data.opts, this);
+    this.vehicles.push(
+      newVehicle 
+    );
 
-  this.map.addMarker()
-  console.log("added vehicle id " + data.id)
+    this.map.addMarker(newVehicle.id+"", newVehicle.gps.pos.y, newVehicle.gps.pos.x, String(newVehicle.make + newVehicle.id), "M.PIN_1", 40, 40, ()=>{}, 1)
+    console.log("added vehicle id " + data.id)
 
   }
 
   updatePins() {
     this.vehicles.forEach(vehicle => {
-      this.map.moveMarker(vehicle.id, vehicle.gps.pos.y, vehicle.gps.pos.x);
+      console.log("updating vehicle#"+vehicle.id);
+      this.map.moveMarker(""+vehicle.id, vehicle.gps.pos.y, vehicle.gps.pos.x);
     });
   }
 
