@@ -1,6 +1,5 @@
 {
 	"eslint.enable": false,
 	"git.autofetch": true,
-	"git.autorefresh": true,
-	"git.enableCommitSigning": true
+	"git.autorefresh": true
 }
