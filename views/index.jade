@@ -14,7 +14,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="http://www.locationbox.com.tr/locationbox/services?Key=#{key}&Cmd=API&Typ=JS")
     script(src="/javascripts/app.js")
-    script(src="/javascripts/mapApp.js" type="module")
+    script(src="/javascripts/mapApp.js")
 
   body
     .header#header
@@ -36,12 +36,12 @@ html
 
   .sidenav#sidenav
     button(onclick="dropmap()") Map Options
-    .dropmap
-      button Show Cars
-      button Show Traffic
-      button Show Weather
-      button Show Destinations
-      button Show Routes
+    .dropmap#dropmap
+      button#cars Show Cars
+      button#traffic Show Traffic
+      button#weather Show Weather
+      button#dest Show Destinations
+      button#route Show Routes
     button(onclick="droproute()")  Routes
     button(onclick="dropnewroute()") New Route
 
