@@ -3,8 +3,9 @@ import { Gastank } from "./gastank.js";
 
 export class Vehicle {
 
-  constructor(id, posX, posY, {make, gaslevel, speed, routeID, routeStart, routeEnd, infoDelay, gasMax}) {
+  constructor(id, posX, posY, {make, gaslevel, speed, routeID, routeStart, routeEnd, infoDelay, gasMax}, map) {
     this.id = id;
+    this.map = map;
     if(gaslevel) this.gas = new Gastank(gaslevel, {max: gasMax});
     this.gps = {
      

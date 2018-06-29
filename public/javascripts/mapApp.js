@@ -1,3 +1,3 @@
-import { MapContainer as Map } from "./classes/map"
+import { MapContainer } from "./classes/map.js"
 
-new Map()
+const map = new MapContainer();
