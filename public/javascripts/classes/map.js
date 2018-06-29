@@ -10,6 +10,17 @@ export class MapContainer {
     this.routes = new Map();
     this.mapDom = document.getElementById("map");
 
+    this.isWeatherOn = false;
+    this.isTrafficOn = false;
+
+    this.refreshData = () => {
+      if (this.isTrafficOn) this.map.showTrafficView();
+      if (this.isWeatherOn) this.map.showWeatherReport();
+    }
+
+    this.map.setMapListener("recenter", this.refreshData);
+    this.map.setMapListener("zoom_level_change", this.refreshData);
+
     this.pinUpdater = setInterval(
       (function (self) { //Self-executing func which takes 'this' as self
         return function () { //Return a function in the context of 'self'
@@ -50,11 +61,11 @@ export class MapContainer {
   }
 
   toggleTraffic() {
-    if (this.isTrafficOn) this.map.hideTraficView(); else this.map.showTrafficView();
+    if (this.isTrafficOn) {this.isTrafficOn = !this.isTrafficOn; this.map.hideTraficView();} else { this.isTrafficOn = !this.isTrafficOn; this.map.showTrafficView()}
   }
   
   toggleWeather() {
-    // do things
+    if (this.isWeatherOn) {this.isWeatherOn = !this.isWeatherOn; this.map.hideWeatherReport();} else { this.isWeatherOn = !this.isWeatherOn; this.map.showWeatherReport()}
   }
 
   // dont forget to use encodeURIComponent()
