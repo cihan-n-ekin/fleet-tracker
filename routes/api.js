@@ -87,6 +87,10 @@ router.get("/routes/:id", function (req, res, next) {
 			gas_loss: 0.7
 		}
 	]
+
+	res.send(
+		routes.filter((val) => val.id == req.params.id)[0]
+	);
 })
 // API endpoint to access route info
 router.get("/vehicles/:id", function (req, res, next) {
