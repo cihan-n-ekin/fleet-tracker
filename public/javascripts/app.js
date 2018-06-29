@@ -24,7 +24,6 @@ function closeNav(x) {
 
 function dropdown(id){
     const elem = document.getElementById(id);
-    console.log(elem);
     
     if (elem.name == "dropped") {
         closeDropdown(id)

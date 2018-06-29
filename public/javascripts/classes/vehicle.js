@@ -33,7 +33,6 @@ export class Vehicle {
     const vehicle = this;
     req.addEventListener("load", function() {
       const info = JSON.parse(this.responseText);
-      console.log(info)
       vehicle.updateInfo(
         info.x,
         info.x,
@@ -48,7 +47,6 @@ export class Vehicle {
   }
 
   updateInfo(posX, posY, {gaslevel, speed}) {
-    console.log(posX, posY, gaslevel, speed);
     this.gps.pos.x = posX || this.gps.pos.x;
     this.gps.pos.y = posY || this.gps.pos.y;
     this.gps.pos.speed = speed || this.gps.pos.speed;

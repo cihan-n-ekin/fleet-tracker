@@ -10,7 +10,6 @@ router.get("/route/:id", function(req, res, next) {
 
 // API endpoint to acces vehicle info
 router.get("/vehicles", function(req, res, next) {
-	console.log(req.params.id);
 	const apilol = [{
 			x: 40.08923,
 			y: 39.2736,
@@ -50,7 +49,6 @@ router.get("/vehicles", function(req, res, next) {
 });
 
 router.get("/routes/:id", function (req, res, next) {
-	console.log(req.p0arams.id);
 	const routes = [
 		{
 			id: 1,
@@ -87,7 +85,6 @@ router.get("/routes/:id", function (req, res, next) {
 			gas_loss: 0.7
 		}
 	]
-
 	res.send(
 		routes.filter((val) => val.id == req.params.id)[0]
 	);

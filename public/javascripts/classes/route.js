@@ -6,8 +6,6 @@ export class Route {
       const req = new XMLHttpRequest();
       req.open("GET", href);
       req.send();
-      console.log(JSON.parse(req.responseText));
-
     }
 
     // load some data from the locationbox api...

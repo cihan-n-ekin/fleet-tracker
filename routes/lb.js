@@ -4,10 +4,8 @@ const request = require("request");
 
 // GET from LocationBox Api's
 router.get('/:api', function (req, res, next) {
-	console.log(req.url);
 	const apiurl = `http://www.locationbox.com.tr/locationbox/services?Cmd=${req.params.api}&Typ=JSON&Key=${global.key}&${req.url.split("?")[1]}`
 	request(apiurl, function (err, resp, body) {
-		console.log(apiurl);
 		if (err) {
 			console.error(err);
 			res.statusCode(404);
