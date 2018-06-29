@@ -22,6 +22,27 @@ function closeNav(x) {
     document.getElementById("main").style.marginLeft = "0";
 }
 
+function dropdown(id){
+    const elem = document.getElementById(id);
+    console.log(elem);
+    
+    if (elem.name == "dropped") {
+        closeDropdown(id)
+        elem.name = "undropped"
+    } else {
+        openDropdown(id)
+        elem.name = "dropped"
+    }
+}
+
+function openDropdown(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeDropdown(id) {
+    document.getElementById(id).style.display = "none";
+}
+
 function dropmap(){
     elem = document.getElementsByClassName(dropmap);
     if (elem.id == "dropped"){
