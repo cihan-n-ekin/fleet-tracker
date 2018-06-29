@@ -35,15 +35,15 @@ html
                     placeholder="Search..")
 
   .sidenav#sidenav
-    a(href="#") Map Options
+    button(onclick="dropmap()") Map Options
     .dropmap
       button Show Cars
       button Show Traffic
       button Show Weather
-    a(href="#") Routes
-    .droproutes
-      button(class="newroute")
-    a(href="#") New Route
+      button Show Destinations
+      button Show Routes
+    button(onclick="droproute()")  Routes
+    button(onclick="dropnewroute()") New Route
 
   .main#main
     .container#container
