@@ -13,3 +13,5 @@ const bindings = {
 	"toggleWeather": document.getElementById("weather"),
 	"toggleRoutes": document.getElementById("route")
 }
+
+map.bindButtons(bindings);
