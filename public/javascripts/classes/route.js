@@ -1,6 +1,16 @@
 export class Route {
   constructor(id) {
-    //do xhr request
+
+    if(id) {
+      const href = `/api/routes/${id}`;
+      const req = new XMLHttpRequest();
+      req.open("GET", href);
+      req.send();
+      console.log(JSON.parse(req.responseText));
+
+    }
+
+    // load some data from the locationbox api...
   }
 
   set end({x, y}) {

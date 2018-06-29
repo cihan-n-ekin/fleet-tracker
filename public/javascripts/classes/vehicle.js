@@ -2,8 +2,10 @@ import { Route } from "./route.js";
 import { Gastank } from "./gastank.js";
 
 export class Vehicle {
-  constructor(id, posX, posY, {make, gaslevel, speed, routeID, routeStart, routeEnd, infoDelay, gasMax}) {
-    this.vehID = id;
+
+  constructor(id, posX, posY, {make, gaslevel, speed, routeID, routeStart, routeEnd, infoDelay, gasMax}, map) {
+    this.id = id;
+    this.map = map;
     if(gaslevel) this.gas = new Gastank(gaslevel, {max: gasMax});
     this.gps = {
      
@@ -27,7 +29,7 @@ export class Vehicle {
   }
 
   getInfo() {
-    const href = `/api/vehicles/${this.vehID}`;
+    const href = `/api/vehicles/${this.id}`;
     const req = new XMLHttpRequest();
     req.open("GET", href, true);
     const game = this;
