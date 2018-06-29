@@ -11,9 +11,9 @@ export class Vehicle {
      
       pos: {
         x: posX,
-        y: posX
+        y: posY
+        // no u
       },
-     
       v: speed,
     
       route: routeID ? new Route(routeID) : (routeStart && routeEnd ? (function (rs, re) {

@@ -57,8 +57,21 @@ export class MapContainer {
     // do things
   }
   
+  // BENI BURAYA IŞINLADI
+  // you need to send a request to "/api/lb?Cons=KAMYON,FERIBOT&yp=JSON&Criteria=FAST&etc"
+  // dont forget to use encodeURIComponent()
+    
   toggleRoutes() {
-    // do things
-  }
 
+    // bunu vehicles.forEach() yaparsan daha hızlı çalışır
+
+    // görmedim onu lol undo yapsana bi    
+    for (let i = 0; i < this.vehicles.length; i++) {
+      const vehicle = this.vehicles[i]; 
+      const data = vehicle.route.data;
+      map.addRoute('route_'+ i, data.pathid, 'ROUTE_PATH', null); 
+
+      return;
+    }
+  }
 }
