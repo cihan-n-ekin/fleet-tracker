@@ -39,8 +39,27 @@ export class MapContainer {
     });
   }
 
-  bindButtons() {
-    document.getElementById("add-vehicle-button")
+  bindButtons(functions) {
+    for (const methodName in functions) {
+      if (functions.hasOwnProperty(methodName)) {
+        const buttonToBind = functions[methodName];
+        try {
+          buttonToBind.onclick(this[methodName].bind(this));
+        } catch (e) {}
+      }
+    }
+  }
+
+  toggleTraffic() {
+    if (this.isTrafficOn) this.map.hideTraficView(); else this.map.showTrafficView();
+  }
+  
+  toggleWeather() {
+    // do things
+  }
+  
+  toggleRoutes() {
+    // do things
   }
 
 }

@@ -7,4 +7,8 @@ vehiclesReq.addEventListener("load", function() {
 	JSON.parse(this.responseText).forEach((vehData) => map.addVehicle(vehData))
 });
 
-const buttons = {}
+const bindings = {
+	"toggleTraffic": document.getElementById("traffic"),
+	"toggleWeather": document.getElementById("weather"),
+	"toggleRoutes": document.getElementById("route")
+}
